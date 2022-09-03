@@ -1,0 +1,63 @@
+<style>
+	body{
+		background-color: #E0EFEA
+;
+	}
+
+
+	#total-orders{
+		background-color: #677C77;
+	}
+
+
+	#orders-delivered{
+		background-color: #445F3B;
+	}
+
+	#orders-pending{
+		background-color: #8EA076;
+	}
+</style>
+
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Total Orders</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_orders}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Available Products</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_products}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Points Earned</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{points_earned}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>

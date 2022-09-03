@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include 'submain.html' %}
+
+<!-- Main layout-->
+<main style="margin-top: 58px;">
+    <div class="container pt-4">
+      <h3>Update Customer</h3>
+    
+      <form method="POST">
+        {% csrf_token %}
+    
+        {{ form.as_p }}
+    
+        <input type="Submit" name="save">
+      
+        </form>
+          
+    </div>
+    </main>
+    <!--Main layout -->
+
+{% endblock %}

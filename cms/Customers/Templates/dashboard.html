@@ -1,0 +1,81 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include 'submain.html' %}
+
+  <!-- Main layout-->
+  <main style="margin-top: 58px;">
+    <div class="container pt-4">
+
+      {% for message in messages %}
+      <p>{{message}}</p>
+      {% endfor %}
+
+      <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th>Name</th>
+            <th>Phone No.</th>
+            <th>Gender</th>
+            <th>Residence</th>
+            <th>Add Product</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for customer in customers %}
+          <tr>
+            <td>
+              <div class="d-flex align-items-center">
+                <img
+                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                    />
+                <div class="ms-3">
+                  <p class="fw-bold mb-1">{{customer.name}}</p>
+                  <p class="text-muted mb-0">{{customer.id_no}}</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p class="fw-normal mb-1">{{customer.phone_no}}</p>
+            </td>
+            <td>
+              <p class="text-muted mb-0">{{customer.get_gender_display}}</p>
+            </td>
+            <td>{{customer.residence}}</td>
+            <td>
+              <a href="{% url 'products' customer.id %}">
+                <i class="fas fa-plus-circle fa-2x text-success"></i>
+              </a>
+            </td>
+            <td>
+              <a href="{% url 'customer_page' customer.id %}">
+                <button type="button" class="btn btn-outline-info btn-sm btn-rounded" data-mdb-ripple-color="dark">View</button>
+              </a>
+            </td>
+            <td>
+              <a href="{% url 'updatecustomer' customer.id %}">
+                <button type="button" class="btn btn-outline-warning btn-sm btn-rounded" data-mdb-ripple-color="dark">Edit</button>
+              </a>
+            </td>
+            <td>
+              <a href="{% url 'deletecustomer' customer.id %}">
+                <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" data-mdb-ripple-color="dark">Delete</button>
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  </main>
+  <!--Main layout -->
+
+{% endblock %}

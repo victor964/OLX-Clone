@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include 'submain.html' %}
+
+<!-- Main layout-->
+<main style="margin-top: 58px;">
+    <div class="container pt-4">
+      <h3>Add Product</h3>
+    
+      <div class="row">
+        <div class="col-sm-6">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+            {{field.label}}
+            <div class="form-outline mb-4">
+              {{field}}
+            </div>
+            {% endfor %}
+        
+            <button type="submit" class="btn btn-primary">Add</button>
+          
+            </form>
+        </div>
+      </div>
+          
+    </div>
+    </main>
+    <!--Main layout -->
+
+{% endblock %}
